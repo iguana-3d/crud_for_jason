@@ -1,0 +1,67 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    margin: 10px 0;
+}
+
+label {
+    margin: 10px 0;
+}
+
+input {
+    padding: 2px;
+}
+
+.div-content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.button-send {
+    margin: 25px 0;
+    padding: 10px;
+    background: #000000;
+    color: #FFFFFF;
+    border: none
+}
+
+.information-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/**********Grid Container**********/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    word-break: break-word;
+    grid-gap: 10px;
+    text-align: center;
+    margin: 25px;
+}
+
+.grid-container p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
