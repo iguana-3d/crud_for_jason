@@ -47,9 +47,11 @@ echo "
                               <option value='TO'>Tocantins</option>
                         </select>
                         </label>
+                        <span id='confirm-update'></span>
+                        <button id='update' class='button-update'>Atualizar</button>
                         <span id='confirm'></span>
-                        <button id='send' class='button-send'>Enviar</button>
-                        <button id='select' class='button-send'>Visualizar Dados</button>
+                        <button id='send' class='button-send'>Gravar</button>
+                        <button id='select' class='button-send'>Visualizar</button>
                   </div> 
                   <div id='information-container' class='information-container'>
                   </div>                 
