@@ -4,7 +4,7 @@ echo "
 <html lang='PT-BR'>
       <head>
             <meta charset='UTF-8' />
-            <link rel='stylesheet' href='style.css' type='text/css' />
+            <link rel='stylesheet' href='./styles/style.css' type='text/css' />
       </head>
       <body>
             <div class='div-content'>
