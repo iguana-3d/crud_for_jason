@@ -13,9 +13,13 @@ echo "
                   <h2>Inserção de dados no banco</h2>                 
                   <div class='content'>
                         <label>Digite seu nome: <input type='text' id='name' class='name' placeholder='Ex: Jason' size='50' maxlength='50'></input></label>
+                        <span id='alert-name' class='alert-name'>O campo não pode ficar vazio</span>
                         <label>Digite sua idade: <input type='number' id='age' class='age' placeholder='Ex: 17' size='50' maxlength='50'></input></label>
+                        <span id='alert-age' class='alert-age'>O campo não pode ficar vazio</span>
                         <label>Digite seu email: <input type='email' id='email' class='email' placeholder='Ex: fulano@gbol.com' size='50' maxlength='50'></input></label>
+                        <span id='alert-email' class='alert-email'>O campo não pode ficar vazio</span>
                         <label>Digite seu CEP: <input type='text' id='cep' class='cep' placeholder='Ex: 12345-123' size='50' maxlength='50'></input></label>
+                        <span id='alert-cep' class='alert-cep'>O campo não pode ficar vazio</span>
                         <label>Estado: 
                         <select id='state' name='state'>
                               <option value='AC'>Acre</option>

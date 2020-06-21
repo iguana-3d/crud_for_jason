@@ -10,30 +10,77 @@ admin.date = {
         /*****Click de gravar no banco*******/
         document.querySelector('#send').addEventListener('click', function(e) {
             // var formData = new FormData;
+            var name = '';
+            var age = '';
+            var email = '';
+            var cep = '';
             const select = document.getElementById("state");
             const selectOption = select.options[select.selectedIndex].text;
-            var data = {
-                name: document.getElementById('name').value,
-                age: document.getElementById('age').value,
-                email: document.getElementById('email').value,
-                cep: document.getElementById('cep').value,
-                state: selectOption
+            if (document.getElementById('name').value != '') {
+                name = document.getElementById('name').value;
+                document.getElementById('name').style.border = '1px solid #000000';
+                document.getElementById('alert-name').style.display = 'none';
+            } else {
+                document.getElementById('alert-name').style.display = 'block';
+                document.getElementById('alert-name').style.color = '#FF0000';
+                document.getElementById('name').style.border = '1px solid #FF0000';
             }
-            const dataSend = JSON.stringify(data);
-
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    const path = xmlhttp.responseText;
-                    console.log("Dados enviados");
-                    let confirm = document.getElementById('confirm');
-                    confirm.style.color = '#339900';
-                    confirm.innerHTML = 'Dados gravados no Banco com Sucesso!';
+            if (document.getElementById('age').value != '') {
+                age = document.getElementById('age').value;
+                document.getElementById('age').style.border = '1px solid #000000';
+                document.getElementById('alert-age').style.display = 'none';
+            } else {
+                document.getElementById('alert-age').style.display = 'block';
+                document.getElementById('alert-age').style.color = '#FF0000';
+                document.getElementById('age').style.border = '1px solid #FF0000';
+            }
+            if (document.getElementById('email').value != '') {
+                email = document.getElementById('email').value;
+                document.getElementById('email').style.border = '1px solid #000000';
+                document.getElementById('alert-email').style.display = 'none';
+            } else {
+                document.getElementById('alert-email').style.display = 'block';
+                document.getElementById('alert-email').style.color = '#FF0000';
+                document.getElementById('email').style.border = '1px solid #FF0000';
+            }
+            if (document.getElementById('cep').value != '') {
+                cep = document.getElementById('cep').value;
+                document.getElementById('cep').style.border = '1px solid #000000';
+                document.getElementById('alert-cep').style.display = 'none';
+            } else {
+                document.getElementById('alert-cep').style.display = 'block';
+                document.getElementById('alert-cep').style.color = '#FF0000';
+                document.getElementById('cep').style.border = '1px solid #FF0000';
+            }
+            if (name != '' && age != '' && email != '' && cep != '') {
+                var data = {
+                    name: document.getElementById('name').value,
+                    age: document.getElementById('age').value,
+                    email: document.getElementById('email').value,
+                    cep: document.getElementById('cep').value,
+                    state: selectOption
                 }
-            };
-            xmlhttp.open("POST", "insert.php");
-            xmlhttp.setRequestHeader('Content-type', 'application/json');
-            xmlhttp.send(dataSend);
+                const dataSend = JSON.stringify(data);
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        const path = xmlhttp.responseText;
+                        console.log("Dados enviados");
+                        let confirm = document.getElementById('confirm');
+                        confirm.style.color = '#339900';
+                        confirm.innerHTML = 'Dados gravados no Banco com Sucesso!';
+                    }
+                };
+                xmlhttp.open("POST", "insert.php");
+                xmlhttp.setRequestHeader('Content-type', 'application/json');
+                xmlhttp.send(dataSend);
+
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('cep').value = '';
+            }
         });
         /***Click de trazer os dados*******/
         document.querySelector('#select').addEventListener('click', function() {

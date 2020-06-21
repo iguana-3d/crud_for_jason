@@ -56,6 +56,13 @@ input {
     text-align: center;
 }
 
+.alert-name,
+.alert-age,
+.alert-email,
+.alert-cep {
+    display: none;
+}
+
 
 /**********Grid Container**********/
 
